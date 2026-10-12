@@ -54,7 +54,6 @@ Built a Myntra-inspired ecommerce frontend clone using HTML, CSS, and JavaScript
 
 </div>
 
-> You can replace this with a project-specific GIF when you create one for the app.
 
 ## Screenshot
 
