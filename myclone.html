@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Clone</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header">  
+        <div class="logo_container">
+            <a href="myclone.html">
+                <img src="myntra.jpg" class="myntra_home" alt="Myntra" onerror="this.src='https://constant.myntassets.com/web/assets/img/icon.5d108c858a0db7deec4b.png'">
+            </a>
+        </div>
+        
+        <nav class="nav_bar">
+            <a href="#deals-grid" class="nav_link active" data-category="all">All</a>
+            <a href="#deals-grid" class="nav_link" data-category="men">Men</a>
+            <a href="#deals-grid" class="nav_link" data-category="women">Women</a>
+            <a href="#deals-grid" class="nav_link" data-category="footwear">Footwear</a>
+            <a href="#deals-grid" class="nav_link" data-category="beauty">Beauty</a>
+            <a href="#deals-grid" class="nav_link" data-category="studio">Studio <sup>NEW</sup></a>
+        </nav>
+
+        <div class="search_bar">  
+            <span class="material-symbols-outlined search_icon">search</span>
+            <input id="searchInput" class="search_input" type="search" aria-label="Search products" title="Press / to search and Escape to clear" placeholder="Search for products, brands and more">
+        </div>
+
+        <div class="action_bar">
+            <a href="profile.html" class="action_container profile_container">
+                <span class="material-symbols-outlined action_icon">person</span>    
+                <span class="action_name" id="headerProfileName">Profile</span>
+            </a>
+
+            <button type="button" class="action_container wishlist_link" aria-label="Show wishlist" aria-pressed="false">
+                <span class="material-symbols-outlined action_icon">favorite</span> 
+                <span class="action_name">Wishlist</span>
+                <span class="wishlist_count" style="display: none;">0</span>
+            </button>
+
+            <a href="bag.html" class="action_container bag_container">
+                <span class="material-symbols-outlined action_icon">shopping_bag</span>
+                <span class="action_name">Bag</span>
+                <span class="bag_count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Promotion -->
+        <section class="banner-container">
+            <div class="hero_banner">
+                <div class="hero_text">
+                    <span class="tag">FLAT ₹400 OFF</span>
+                    <h1>BIG FASHION FESTIVAL</h1>
+                    <p>On 10 Lakh+ Styles | Top Brands</p>
+                    <a href="#deals-grid" class="shop_btn">EXPLORE DEALS</a>
+                </div>
+            </div>
+        </section>
+               
+        <!-- Deals Controls & Sorting Toolbar -->
+        <section class="deals_control_panel" id="deals-grid">
+            <div class="deals_toolbar">
+                <div class="deal_chips">
+                    <button class="deal_chip active" data-deal="all">All Deals</button>
+                    <button class="deal_chip" data-deal="under_799">Under ₹799</button>
+                    <button class="deal_chip" data-deal="min_60">Min 60% Off</button>
+                    <button class="deal_chip" data-deal="trending">Trending Styles</button>
+                </div>
+
+                <div class="sort_wrapper">
+                    <label for="sortSelector">Sort by:</label>
+                    <select id="sortSelector" class="sort_select">
+                        <option value="featured">Featured Deals</option>
+                        <option value="discount_high">Discount: High to Low</option>
+                        <option value="price_low">Price: Low to High</option>
+                        <option value="price_high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+            <p class="results_summary" id="resultsCount">Showing all deals</p>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="section_wrapper">
+            <h2 class="category-heading">MEDAL WORTHY BRANDS TO BAG</h2>
+
+            <div class="category-items" id="productGrid">
+
+                <!--- MEN'S SECTION ----> 
+                <a href="#" class="product_card" data-category="men" data-price="599" data-mrp="1999" data-discount="70" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQve8nbJmzYUSwdB5SD2_GW7ZlqBzBkPDwDapYfD-_9hw&s" alt="Casual Shirts">
+                        <span class="discount_tag">70% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Roadster & HRX</h4>
+                        <p>Casual Shirts & Tees</p>
+                        <div class="price_row">
+                            <span class="final_price">₹599</span>
+                            <span class="mrp_price">₹1,999</span>
+                            <span class="discount_percent">(70% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="men" data-price="799" data-mrp="1999" data-discount="60" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzgc_X2seHheTj72gdp12cbEonE1PlrAxlK0rOXaEefw&s" alt="Casual Shirts">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>H&M</h4>
+                        <p>Casual Shirts & Tees</p>
+                        <div class="price_row">
+                            <span class="final_price">₹799</span>
+                            <span class="mrp_price">₹1,999</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="men" data-price="499" data-mrp="1299" data-discount="61" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmdRegW5kiAY6gE6B2G_YB7mfJIIFHx7VW6lytgHXvtw&s=10" alt="Casual Shirts">
+                        <span class="discount_tag">61% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Roadster</h4>
+                        <p>Casual Shirts & Tees</p>
+                        <div class="price_row">
+                            <span class="final_price">₹499</span>
+                            <span class="mrp_price">₹1,299</span>
+                            <span class="discount_percent">(61% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="men" data-price="699" data-mrp="1799" data-discount="61" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&auto=format&fit=crop" alt="Casual Shirts">
+                        <span class="discount_tag">61% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Roadster & HRX</h4>
+                        <p>Casual Shirts & Tees</p>
+                        <div class="price_row">
+                            <span class="final_price">₹699</span>
+                            <span class="mrp_price">₹1,799</span>
+                            <span class="discount_percent">(61% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!--- WOMEN'S COLLECTIONS-->
+                <a href="#" class="product_card" data-category="women" data-price="899" data-mrp="2299" data-discount="60" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvrCl4nUfGSoP6EdKwFrmN41j69eMUp8sLiSOE64EFyQ&s=10" alt="Bodycone Dresses">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>BODYCONE DRESSES FOR WOMENS</h4>
+                        <p>WOMEN'S WEAR</p>
+                        <div class="price_row">
+                            <span class="final_price">₹899</span>
+                            <span class="mrp_price">₹2,299</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="women" data-price="749" data-mrp="1899" data-discount="60" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlZxrWSfrtsE6MiZXUsQiEwQ0t1CpQPqLbNnEJnd5rw&s=10" alt="Bodycone Dresses">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>BODYCONE DRESSES FOR WOMENS</h4>
+                        <p>WOMEN'S WEAR</p>
+                        <div class="price_row">
+                            <span class="final_price">₹749</span>
+                            <span class="mrp_price">₹1,899</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="women" data-price="649" data-mrp="1599" data-discount="59" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnwV6ekQPYT1LtaD2RF1ZLbmqs-hEjU0Q7n3Q9T9fxog&s=10" alt="Casuals for Women">
+                        <span class="discount_tag">59% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>CASUALS FOR WOMENS</h4>
+                        <p>WOMEN'S WEAR</p>
+                        <div class="price_row">
+                            <span class="final_price">₹649</span>
+                            <span class="mrp_price">₹1,599</span>
+                            <span class="discount_percent">(59% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="women" data-price="1099" data-mrp="2799" data-discount="60" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTaIIsiA9oOYnMq71Yp4fAyx17IVMgkRr8Whe58vBxiQ&s=10" alt="Traditional Outfits">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>TRADITIONAL OUTFITS</h4>
+                        <p>WOMEN'S WEAR</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,099</span>
+                            <span class="mrp_price">₹2,799</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!----FOOTWEAR PRODUCTS-->
+                <a href="#" class="product_card" data-category="footwear" data-price="1999" data-mrp="4999" data-discount="60" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop" alt="Footwear">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Nike & Puma</h4>
+                        <p>Active Footwear</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,999</span>
+                            <span class="mrp_price">₹4,999</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="footwear" data-price="1499" data-mrp="3499" data-discount="57" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&auto=format&fit=crop" alt="Footwear">
+                        <span class="discount_tag">57% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Nike & Puma</h4>
+                        <p>Active Footwear</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,499</span>
+                            <span class="mrp_price">₹3,499</span>
+                            <span class="discount_percent">(57% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="footwear" data-price="1799" data-mrp="3999" data-discount="55" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlzlOJOOCoBmvJfXs96lbxc5XwL16hQsJvKaEzmucwg&s=10" alt="Footwear">
+                        <span class="discount_tag">55% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Nike & Puma</h4>
+                        <p>Active Footwear</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,799</span>
+                            <span class="mrp_price">₹3,999</span>
+                            <span class="discount_percent">(55% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="footwear" data-price="1299" data-mrp="2999" data-discount="56" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&auto=format&fit=crop" alt="Footwear">
+                        <span class="discount_tag">UP TO 60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Nike & Puma</h4>
+                        <p>Active Footwear</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,299</span>
+                            <span class="mrp_price">₹2,999</span>
+                            <span class="discount_percent">(56% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!---MAKEUP PRODUCTS-->
+                <a href="#" class="product_card" data-category="beauty" data-price="399" data-mrp="899" data-discount="55" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500&auto=format&fit=crop" alt="Makeup">
+                        <span class="discount_tag">55% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Maybelline & MAC</h4>
+                        <p>Makeup & Skincare</p>
+                        <div class="price_row">
+                            <span class="final_price">₹399</span>
+                            <span class="mrp_price">₹899</span>
+                            <span class="discount_percent">(55% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="beauty" data-price="499" data-mrp="999" data-discount="50" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&auto=format&fit=crop" alt="Beauty">
+                        <span class="discount_tag">UP TO 50% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Maybelline & MAC</h4>
+                        <p>Makeup & Skincare</p>
+                        <div class="price_row">
+                            <span class="final_price">₹499</span>
+                            <span class="mrp_price">₹999</span>
+                            <span class="discount_percent">(50% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- STUDIO ITEMS -->
+                <a href="#" class="product_card" data-category="studio" data-price="1299" data-mrp="2599" data-discount="50" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&auto=format&fit=crop&q=80" alt="Studio Streetwear Edit">
+                        <span class="discount_tag">TRENDING</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Studio Edit: Street Vibe</h4>
+                        <p>Curated Cargo & Oversized Fits</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,299</span>
+                            <span class="mrp_price">₹2,599</span>
+                            <span class="discount_percent">(50% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="studio" data-price="1499" data-mrp="2999" data-discount="50" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&auto=format&fit=crop&q=80" alt="Minimalist Fashion">
+                        <span class="discount_tag">INFLUENCER PICK</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Minimalist Neutrals</h4>
+                        <p>Linen Blends & Clean Silhouettes</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,499</span>
+                            <span class="mrp_price">₹2,999</span>
+                            <span class="discount_percent">(50% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="studio" data-price="1699" data-mrp="3499" data-discount="51" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&auto=format&fit=crop&q=80" alt="Modern Editorial Look">
+                        <span class="discount_tag">RUNWAY</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>High-Street Layers</h4>
+                        <p>Cropped Jackets & Straight Pants</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,699</span>
+                            <span class="mrp_price">₹3,499</span>
+                            <span class="discount_percent">(51% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="studio" data-price="1899" data-mrp="3999" data-discount="52" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&auto=format&fit=crop&q=80" alt="Statement Looks">
+                        <span class="discount_tag">LIMITED DROP</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Noir & Satin Statements</h4>
+                        <p>Cocktail Silhouettes & Drapes</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,899</span>
+                            <span class="mrp_price">₹3,999</span>
+                            <span class="discount_percent">(52% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- More picks across every storefront category -->
+                <a href="#" class="product_card" data-category="men" data-price="899" data-mrp="1999" data-discount="55" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&auto=format&fit=crop&q=80" alt="Men's graphic casual t-shirt" loading="lazy">
+                        <span class="discount_tag">55% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Roadster Graphic Tees</h4>
+                        <p>Everyday Cotton T-Shirts</p>
+                        <div class="price_row">
+                            <span class="final_price">₹899</span>
+                            <span class="mrp_price">₹1,999</span>
+                            <span class="discount_percent">(55% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="men" data-price="1199" data-mrp="2999" data-discount="60" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&auto=format&fit=crop&q=80" alt="Men's casual jacket" loading="lazy">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Urban Ranger Jackets</h4>
+                        <p>Lightweight Casual Layers</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,199</span>
+                            <span class="mrp_price">₹2,999</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="women" data-price="1299" data-mrp="2999" data-discount="57" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80" alt="Women's contemporary everyday outfit" loading="lazy">
+                        <span class="discount_tag">57% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Everyday Edit</h4>
+                        <p>Easy Tops & Modern Separates</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,299</span>
+                            <span class="mrp_price">₹2,999</span>
+                            <span class="discount_percent">(57% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="women" data-price="1599" data-mrp="3999" data-discount="60" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&auto=format&fit=crop&q=80" alt="Women's printed occasion dress" loading="lazy">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Printed Occasion Dress</h4>
+                        <p>Day-to-Evening Dresses</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,599</span>
+                            <span class="mrp_price">₹3,999</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="footwear" data-price="1799" data-mrp="3999" data-discount="55" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80" alt="Red everyday running sneakers" loading="lazy">
+                        <span class="discount_tag">55% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Everyday Runner</h4>
+                        <p>Lightweight Lifestyle Sneakers</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,799</span>
+                            <span class="mrp_price">₹3,999</span>
+                            <span class="discount_percent">(55% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="footwear" data-price="999" data-mrp="2499" data-discount="60" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&auto=format&fit=crop&q=80" alt="Women's classic everyday sandals" loading="lazy">
+                        <span class="discount_tag">60% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Classic Comfort Sandals</h4>
+                        <p>Everyday Flats & Sandals</p>
+                        <div class="price_row">
+                            <span class="final_price">₹999</span>
+                            <span class="mrp_price">₹2,499</span>
+                            <span class="discount_percent">(60% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="beauty" data-price="499" data-mrp="999" data-discount="50" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&auto=format&fit=crop&q=80" alt="Daily skincare essentials" loading="lazy">
+                        <span class="discount_tag">50% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Daily Glow Essentials</h4>
+                        <p>Skincare & Hydration</p>
+                        <div class="price_row">
+                            <span class="final_price">₹499</span>
+                            <span class="mrp_price">₹999</span>
+                            <span class="discount_percent">(50% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="beauty" data-price="699" data-mrp="1599" data-discount="56" data-deal-tag="clearance">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=80" alt="Makeup palette and beauty products" loading="lazy">
+                        <span class="discount_tag">56% OFF</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>Color Story Makeup Kit</h4>
+                        <p>Everyday Makeup Palette</p>
+                        <div class="price_row">
+                            <span class="final_price">₹699</span>
+                            <span class="mrp_price">₹1,599</span>
+                            <span class="discount_percent">(56% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="studio" data-price="1399" data-mrp="2999" data-discount="53" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80" alt="Contemporary street style outfit" loading="lazy">
+                        <span class="discount_tag">TRENDING</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>City Weekend Stories</h4>
+                        <p>Relaxed Streetwear Edit</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,399</span>
+                            <span class="mrp_price">₹2,999</span>
+                            <span class="discount_percent">(53% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="product_card" data-category="studio" data-price="1899" data-mrp="3999" data-discount="52" data-deal-tag="trending">
+                    <div class="img_box">
+                        <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?w=600&auto=format&fit=crop&q=80" alt="Modern seasonal fashion collection" loading="lazy">
+                        <span class="discount_tag">NEW SEASON</span>
+                        <button type="button" class="fav_btn" aria-label="Favorite"><span class="material-symbols-outlined">favorite</span></button>
+                        <button type="button" class="add_to_bag_btn"><span class="material-symbols-outlined">shopping_bag</span> ADD TO BAG</button>
+                    </div>
+                    <div class="card_info">
+                        <h4>New Season Moodboard</h4>
+                        <p>Fresh Fits & Statement Pieces</p>
+                        <div class="price_row">
+                            <span class="final_price">₹1,899</span>
+                            <span class="mrp_price">₹3,999</span>
+                            <span class="discount_percent">(52% OFF)</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Empty State -->
+            <div id="noResultsState" class="empty_state hidden">
+                <span class="material-symbols-outlined">sentiment_dissatisfied</span>
+                <h3>No deals match your criteria</h3>
+                <p>Try clearing filters or searching for another brand or product.</p>
+                <button type="button" id="resetFiltersBtn" class="reset_filters_btn">CLEAR FILTERS</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site_footer" id="site-footer">
+        <div class="footer_container">
+            <div class="footer_column">
+                <h3>ONLINE SHOPPING</h3>
+                <a class="footer_category_link" href="#deals-grid" data-category="men">Men</a>
+                <a class="footer_category_link" href="#deals-grid" data-category="women">Women</a>
+                <a class="footer_category_link" href="#deals-grid" data-category="footwear">Footwear</a>
+                <a class="footer_category_link" href="#deals-grid" data-category="beauty">Beauty</a>
+                <a class="footer_category_link" href="#deals-grid" data-category="studio">Studio</a>
+
+                <h3 class="footer_subheading">USEFUL LINKS</h3>
+                <a href="#deals-grid">Explore all deals</a>
+                <a href="profile.html">My account</a>
+                <a href="bag.html">Shopping bag</a>
+            </div>
+
+            <div class="footer_column" id="footer-policies">
+                <h3>CUSTOMER POLICIES</h3>
+                <a href="#footer-demo-note">Contact Us</a>
+                <a href="#footer-demo-note">Frequently Asked Questions</a>
+                <a href="#footer-demo-note">Terms of Use</a>
+                <a href="#footer-demo-note">Privacy Policy</a>
+                <a href="#footer-demo-note">Shipping & Returns</a>
+                <a href="#footer-demo-note">Cancellation</a>
+            </div>
+
+            <div class="footer_column footer_app_column">
+                <h3>EXPERIENCE THE SHOP ON MOBILE</h3>
+                <div class="app_badges" aria-label="App badges are illustrative">
+                    <span class="app_badge">
+                        <span class="material-symbols-outlined">shop</span>
+                        <span><small>GET IT ON</small><strong>Google Play</strong></span>
+                    </span>
+                    <span class="app_badge">
+                        <span class="material-symbols-outlined">phone_iphone</span>
+                        <span><small>Download on the</small><strong>App Store</strong></span>
+                    </span>
+                </div>
+
+                <h3 class="footer_subheading" id="footer-social">KEEP IN TOUCH</h3>
+                <div class="social_links" aria-label="Social media">
+                    <a href="#footer-social" aria-label="Facebook"><span class="social_letter">f</span></a>
+                    <a href="#footer-social" aria-label="Twitter"><span class="material-symbols-outlined">alternate_email</span></a>
+                    <a href="#footer-social" aria-label="YouTube"><span class="material-symbols-outlined">play_arrow</span></a>
+                    <a href="#footer-social" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
+                </div>
+            </div>
+
+            <div class="trust_column">
+                <div class="trust_item">
+                    <span class="material-symbols-outlined trust_icon">verified</span>
+                    <p><strong>FRONTEND DEMO</strong><br>Browse products and try the shopping flow. No real orders are processed.</p>
+                </div>
+                <div class="trust_item">
+                    <span class="material-symbols-outlined trust_icon">devices</span>
+                    <p><strong>SAVED IN YOUR BROWSER</strong><br>Your demo bag and wishlist stay on this device.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="popular_searches">
+            <h3>POPULAR SEARCHES</h3>
+            <div class="popular_searches_rule"></div>
+            <p>
+                <a href="#deals-grid">Men's Fashion</a><span>|</span>
+                <a href="#deals-grid">Women's Fashion</a><span>|</span>
+                <a href="#deals-grid">Casual Shirts</a><span>|</span>
+                <a href="#deals-grid">Dresses</a><span>|</span>
+                <a href="#deals-grid">Sneakers</a><span>|</span>
+                <a href="#deals-grid">Beauty</a><span>|</span>
+                <a href="#deals-grid">Skincare</a><span>|</span>
+                <a href="#deals-grid">Studio Styles</a>
+            </p>
+        </div>
+
+        <div class="footer_bottom" id="footer-demo-note">
+            <p>Frontend demo only. App links, social links, and customer policy links are illustrative.</p>
+            <p class="copyright">© 2026 Myntra Clone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <p class="demo_notice">Frontend demo only · Your bag, wishlist and demo account stay in this browser.</p>
+    <script src="script.js"></script>
+</body>
+</html>

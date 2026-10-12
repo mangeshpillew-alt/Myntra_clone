@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Account | Myntra Clone</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="header">  
+        <div class="logo_container">
+            <a href="myclone.html">
+                <img src="myntra.jpg" class="myntra_home" alt="Myntra home">
+            </a>
+        </div>
+        
+        <nav class="nav_bar">
+            <a href="myclone.html" class="nav_link">Back to Shop</a>
+        </nav>
+
+        <div class="action_bar">
+            <a href="bag.html" class="action_container bag_container">
+                <span class="material-symbols-outlined action_icon">shopping_bag</span>
+                <span class="action_name">Bag</span>
+                <span class="bag_count" id="headerBagCount">0</span>
+            </a>
+        </div> 
+    </header>
+
+    <main class="profile_main_wrapper">
+        <!-- Auth Box: Displayed when logged OUT -->
+        <section id="authSection" class="auth_card">
+            <div class="banner_strip" aria-label="Myntra fashion festival">
+                <span class="banner_kicker">MYNTRA FASHION FESTIVAL</span>
+                <h1>Good style starts here</h1>
+                <p>Sign in to discover looks you love.</p>
+            </div>
+            
+            <div class="auth_body">
+                <div class="frontend_notice" role="note">
+                    Demo account only. Your details are saved in this browser and are not sent to a server.
+                </div>
+
+                <div class="tab_controls">
+                    <button type="button" class="tab_btn active" id="tabLogin">Login</button>
+                    <button type="button" class="tab_btn" id="tabSignup">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth_form">
+                    <h3>Login <span>to your account</span></h3>
+                    <div class="input_group">
+                        <label for="loginEmail">Email / Mobile Number</label>
+                        <input type="text" id="loginEmail" autocomplete="username" placeholder="Enter email or 10-digit mobile" required>
+                    </div>
+                    <div class="input_group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" autocomplete="current-password" placeholder="Enter password" required>
+                    </div>
+                    <p class="error_msg" id="loginError"></p>
+                    <button type="submit" class="auth_submit_btn">CONTINUE</button>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth_form hidden">
+                    <h3>Sign Up <span>to enjoy deals & perks</span></h3>
+                    <div class="input_group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" autocomplete="name" minlength="2" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="input_group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" autocomplete="email" placeholder="Enter valid email" required>
+                    </div>
+                    <div class="input_group">
+                        <label for="signupMobile">Mobile Number</label>
+                        <input type="tel" id="signupMobile" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
+                    </div>
+                    <div class="input_group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" autocomplete="new-password" minlength="8" placeholder="Create a password (8+ characters)" required>
+                    </div>
+                    <p class="error_msg" id="signupError"></p>
+                    <button type="submit" class="auth_submit_btn">CREATE ACCOUNT</button>
+                </form>
+
+                <p class="terms_text">
+                    By continuing, you agree to Myntra's <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Profile Dashboard: Displayed when logged IN -->
+        <section id="dashboardSection" class="dashboard_card hidden">
+            <div class="profile_header_panel">
+                <div class="avatar_circle" id="userAvatarContainer">
+                    <span class="material-symbols-outlined" id="defaultAvatarIcon">person</span>
+                    <img id="userAvatarImg" class="user_profile_picture hidden" src="" alt="Profile Picture">
+                </div>
+                <div class="user_greeting">
+                    <h2 id="userNameDisplay">Welcome User</h2>
+                    <p id="userEmailDisplay">user@example.com</p>
+                    <p id="userMobileDisplay">+91 0000000000</p>
+                </div>
+                <button type="button" id="logoutBtn" class="logout_btn">LOGOUT</button>
+            </div>
+
+            <div class="account_tiles_grid">
+                <a href="bag.html" class="tile_card">
+                    <span class="material-symbols-outlined tile_icon">shopping_bag</span>
+                    <div class="tile_content">
+                        <h4>Your Bag</h4>
+                        <p>View items ready for checkout</p>
+                    </div>
+                </a>
+
+                <a href="myclone.html#wishlist" class="tile_card">
+                    <span class="material-symbols-outlined tile_icon">favorite_border</span>
+                    <div class="tile_content">
+                        <h4>Collections & Wishlist</h4>
+                        <p>All your curated and bookmarked styles</p>
+                    </div>
+                </a>
+
+                <div class="tile_card">
+                    <span class="material-symbols-outlined tile_icon">credit_card</span>
+                    <div class="tile_content">
+                        <h4>Saved Cards & UPI</h4>
+                        <p>Payment details are not stored in this demo</p>
+                    </div>
+                </div>
+
+                <div class="tile_card">
+                    <span class="material-symbols-outlined tile_icon">location_on</span>
+                    <div class="tile_content">
+                        <h4>Addresses</h4>
+                        <p>Set a delivery pincode from your shopping bag</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <p class="demo_notice">Frontend demo only · Sign-in is local to this browser and is not secure for real accounts.</p>
+    <script src="profile.js"></script>
+</body>
+</html>

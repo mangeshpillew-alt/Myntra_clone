@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bag | Myntra Clone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <header class="checkout_header">
+        <div class="header_inner">
+            <a href="myclone.html" class="logo_link">
+                <img src="myntra.jpg" alt="Myntra" class="checkout_logo" onerror="this.src='https://constant.myntassets.com/web/assets/img/icon.5d108c858a0db7deec4b.png'">
+            </a>
+            <div class="checkout_steps">
+                <span class="step active">BAG</span>
+                <span class="step_divider">----------</span>
+                <span class="step">ADDRESS</span>
+                <span class="step_divider">----------</span>
+                <span class="step">PAYMENT</span>
+            </div>
+            <div class="secure_badge">
+                <span class="material-symbols-outlined">verified_user</span>
+                <span>100% SECURE</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout_container">
+        <!-- Left Side: Item List -->
+        <section class="bag_items_section">
+            <div class="delivery_box">
+                <div>
+                    <span class="delivery_title">Deliver to: </span>
+                    <strong id="userPincode">Mumbai, 400001</strong>
+                </div>
+                <button type="button" class="change_address_btn">CHANGE PINCODE</button>
+            </div>
+
+            <div id="cartItemsList" class="items_wrapper">
+                <!-- Dynamically injected via bag.js -->
+            </div>
+
+            <div id="emptyBagState" class="empty_bag hidden">
+                <span class="material-symbols-outlined empty_icon">shopping_bag</span>
+                <h3>Hey, it feels so light!</h3>
+                <p>There is nothing in your bag. Let's add some items.</p>
+                <a href="myclone.html" class="continue_shop_btn">ADD ITEMS FROM WISHLIST / HOME</a>
+            </div>
+        </section>
+
+        <!-- Right Side: Order Summary -->
+        <aside class="price_summary_section" id="priceBlock">
+            <h4 class="summary_heading">PRICE DETAILS (<span id="totalItemsCount">0</span> Items)</h4>
+            
+            <div class="price_row">
+                <span>Total MRP</span>
+                <span id="totalMRP">₹0</span>
+            </div>
+            <div class="price_row">
+                <span>Discount on MRP</span>
+                <span class="text_green" id="totalDiscount">-₹0</span>
+            </div>
+            <div class="price_row">
+                <span>Platform Fee</span>
+                <span class="text_green">FREE</span>
+            </div>
+            <div class="price_row">
+                <span>Shipping Fee</span>
+                <span class="text_green">FREE</span>
+            </div>
+
+            <hr class="summary_divider">
+
+            <div class="total_amount_row">
+                <strong>Total Amount</strong>
+                <strong id="finalAmount">₹0</strong>
+            </div>
+
+            <button type="button" id="placeOrderBtn" class="place_order_btn">PLACE ORDER</button>
+        </aside>
+    </main>
+
+    <p class="demo_notice">Frontend demo only · No real payment or order is processed.</p>
+    <script src="bag.js"></script>
+</body>
+</html>
