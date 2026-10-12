@@ -1,0 +1,11 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="180" rx="28" fill="#FFF7F9"/>
+  <rect x="28" y="28" width="124" height="124" rx="26" fill="#FF3F6C"/>
+  <path d="M80 55C67 55 56 66 56 79V93C56 106 67 117 80 117H102C115 117 126 106 126 93V79C126 66 115 55 102 55H80Z" fill="white" fill-opacity="0.15"/>
+  <path d="M72 73L56 123H84L94 92L104 123H132L116 73H72Z" fill="white"/>
+  <path d="M64 123H142L127 139H79L64 123Z" fill="#FFE3EB"/>
+  <text x="192" y="90" fill="#1B1B1F" font-family="Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="1.2">MYNTRA</text>
+  <text x="194" y="126" fill="#FF3F6C" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">CLONE</text>
+  <rect x="494" y="50" width="96" height="30" rx="15" fill="#FFDFE8"/>
+  <text x="542" y="71" text-anchor="middle" fill="#FF3F6C" font-family="Arial, sans-serif" font-size="15" font-weight="700">SHOP</text>
+</svg>
