@@ -39,7 +39,7 @@ Myntra-inspired fashion storefront demo with responsive shopping, wishlist, and 
 
 A fashion e-commerce front-end clone built with HTML, CSS, and JavaScript to simulate a premium online shopping experience with product filters, wishlist actions, and bag summary functionality.
 
-### GitHub copy-ready text
+### GitHub ready text
 
 - GitHub Repository Tagline: Myntra-inspired fashion storefront demo with responsive shopping, wishlist, and bag flows.
 - Portfolio / Resume Title: Myntra-Inspired E-commerce Frontend Clone | HTML, CSS, JavaScript
